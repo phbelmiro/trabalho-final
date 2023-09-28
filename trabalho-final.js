@@ -25,13 +25,41 @@ function visualizarReservas() {
 }
 
 function editarReserva() {
-    
+    const indice = prompt("Digite o índice da reserva que deseja editar:") - 1;
+
+  if ( indice < 0 || indice >= reservas.length) {
+    console.log("Índice inválido");
+  } else {
+    const novoNome = prompt("Digite o novo nome:");
+    const novaData = prompt("Digite a nova data:");
+    const novoHorário = prompt("Digite o novo horário:");
+    const novaSala = prompt("Digite a nova sala:");
+    const novaFinalidade = prompt("Digite a nova finalidade:");
+          
+    reservas[indice].nome = novoNome;
+    reservas[indice].data = novaData;
+    reservas[indice].horario = novoHorário;
+    reservas[indice].sala = novaSala;
+    reservas[indice].finalidadeDaReunião = novaFinalidade;
+          
+    console.log("reserva editada");
+      }
+  }
+                    }
     exibirMenu()
+
   // Implementar edição de reserva
 }
 
 function deletarReserva() {
-    
+    const indice = prompt("Digite o índice da reserva que deseja editar:") - 1;
+
+  if ( indice < 0 || indice >= reservas.length) {
+    console.log("Índice inválido");
+  } else {
+    reservas.splice(indice, 1);
+    console.log("reserva apagada ");
+  }
     exibirMenu()
   // Implementar exclusão de reserva
 }
